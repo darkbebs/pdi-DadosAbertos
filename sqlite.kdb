@@ -1,12 +1,12 @@
   <connection>
     <name>sqlite</name>
-    <server>c:\Users\Unifafibe\Documents\</server>
-    <type>SQLITE</type>
+    <server>localhost</server>
+    <type>MYSQL</type>
     <access>Native</access>
-    <database>dw.db</database>
-    <port/>
-    <username/>
-    <password>Encrypted </password>
+    <database>dw2</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7c3d7fe4ef720dfb38f99</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -14,8 +14,10 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>

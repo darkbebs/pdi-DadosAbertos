@@ -2,41 +2,41 @@
   <Cube name="Gastos_Cartao" visible="true" cache="true" enabled="true">
     <Table name="fato_gasto">
     </Table>
-    <Dimension type="StandardDimension" visible="true" foreignKey="sk_tempo" name="Tempo">
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_tempo" highCardinality="false" name="Tempo">
       <Hierarchy name="Tempo" visible="true" hasAll="true" primaryKey="sk_tempo">
-        <Table name="dim_tempo" alias="">
+        <Table name="dim_tempo">
         </Table>
-        <Level name="Ano" visible="true" column="ano4" type="String" uniqueMembers="false">
+        <Level name="Ano" visible="true" column="ano4" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Semestre" visible="true" column="nome_trimestre" type="String" uniqueMembers="false">
+        <Level name="Semestre" visible="true" column="nome_trimestre" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="mes" visible="true" column="nome_mes" type="String" uniqueMembers="false" caption="M&#234;s">
+        <Level name="mes" visible="true" column="nome_mes" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="M&#234;s">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="sk_portador" name="Portador">
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_portador" highCardinality="false" name="Portador">
       <Hierarchy name="Portador" visible="true" hasAll="true" primaryKey="sk_portador">
-        <Table name="dim_portador" alias="">
+        <Table name="dim_portador">
         </Table>
-        <Level name="orgao_superior" visible="true" column="orgao_superior" type="String" uniqueMembers="false" caption="Org&#227;o Superior">
+        <Level name="orgao_superior" visible="true" column="orgao_superior" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Org&#227;o Superior">
         </Level>
-        <Level name="orgao" visible="true" column="orgao" uniqueMembers="false" caption="Org&#227;o">
+        <Level name="orgao" visible="true" column="orgao" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Org&#227;o">
         </Level>
-        <Level name="portador" visible="true" column="portador" type="String" uniqueMembers="false" caption="Portador">
+        <Level name="portador" visible="true" column="portador" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Portador">
         </Level>
       </Hierarchy>
       <Hierarchy name="portador_individual" visible="true" hasAll="true" primaryKey="sk_portador" caption="Portador Individual">
         <Table name="dim_portador" alias="portador_individual">
         </Table>
-        <Level name="Portador" visible="true" column="portador" uniqueMembers="false">
+        <Level name="Portador" visible="true" column="portador" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="sk_favorecido" name="Favorecido">
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_favorecido" highCardinality="false" name="Favorecido">
       <Hierarchy name="Favorecido" visible="true" hasAll="true" primaryKey="sk_favorecido">
-        <Table name="dim_favorecido" alias="">
+        <Table name="dim_favorecido">
         </Table>
-        <Level name="Favorecido" visible="true" column="nome" uniqueMembers="false" caption="Favorecido">
+        <Level name="Favorecido" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Favorecido">
         </Level>
       </Hierarchy>
     </Dimension>

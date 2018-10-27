@@ -1,0 +1,50 @@
+<Schema name="Dados Governo">
+  <Cube name="Gastos_Cartao" visible="true" cache="true" enabled="true">
+    <Table name="fato_gasto">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_tempo" name="Tempo">
+      <Hierarchy name="Tempo" visible="true" hasAll="true" primaryKey="sk_tempo">
+        <Table name="dim_tempo" alias="">
+        </Table>
+        <Level name="Ano" visible="true" column="ano4" type="String" uniqueMembers="false">
+        </Level>
+        <Level name="Semestre" visible="true" column="nome_trimestre" type="String" uniqueMembers="false">
+        </Level>
+        <Level name="mes" visible="true" column="nome_mes" type="String" uniqueMembers="false" caption="M&#234;s">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_portador" name="Portador">
+      <Hierarchy name="Portador" visible="true" hasAll="true" primaryKey="sk_portador">
+        <Table name="dim_portador" alias="">
+        </Table>
+        <Level name="orgao_superior" visible="true" column="orgao_superior" type="String" uniqueMembers="false" caption="Org&#227;o Superior">
+        </Level>
+        <Level name="orgao" visible="true" column="orgao" uniqueMembers="false" caption="Org&#227;o">
+        </Level>
+        <Level name="portador" visible="true" column="portador" type="String" uniqueMembers="false" caption="Portador">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="portador_individual" visible="true" hasAll="true" primaryKey="sk_portador" caption="Portador Individual">
+        <Table name="dim_portador" alias="portador_individual">
+        </Table>
+        <Level name="Portador" visible="true" column="portador" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="sk_favorecido" name="Favorecido">
+      <Hierarchy name="Favorecido" visible="true" hasAll="true" primaryKey="sk_favorecido">
+        <Table name="dim_favorecido" alias="">
+        </Table>
+        <Level name="Favorecido" visible="true" column="nome" uniqueMembers="false" caption="Favorecido">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Valor" column="valor" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="valor_medio" column="valor" aggregator="avg" caption="Valor M&#233;dio" visible="true">
+    </Measure>
+    <Measure name="valor_maximo" column="valor" aggregator="max" caption="Valor M&#225;ximo" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
